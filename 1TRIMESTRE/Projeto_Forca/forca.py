@@ -17,7 +17,7 @@ print ( )
 
 while (secreta != escolhida):
     y = 0
-    while (y < 10):
+    while (y < 5):
         chute = str(input("Digite uma letra: "))
         if (chute in escolhida):
             print (chute, " existe na palavra")
@@ -36,10 +36,10 @@ while (secreta != escolhida):
             y = y + 1
             print( )
 
-        if (y == 10):
+        if (y == 5):
             print ("Forca! Você perdeu")
             print ("A palavra era" ,escolhida)
 
-    if "_" not in secreta
+    if "_" not in secreta:
         print ("Você acertou, parabéns")
         break
