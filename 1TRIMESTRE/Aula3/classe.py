@@ -59,16 +59,17 @@ while(True):
         case "4":
             print()
             indice = int(input("Qual série você gostaria de avaliar? Digite o índice: "))
-            avaliacao = input("like ou dislike? ")
+            avaliacao = str(input("like ou dislike? "))
                 
-            if avaliacao == "like":
-                serie.like()
-                print(f"Você deu dislike em '{serie.nome}'! Nova nota: {serie.nota}")
+            for serie in catalogo:
+                if avaliacao == "like":
+                    serie.like()
+                    print(f"Você deu like em {serie.nome}! Nova nota: {serie.nota}")
 
-            elif avaliacao == "dislike":
-                serie.dislike()
-                print(f"Você deu dislike em '{serie.nome}'! Nova nota: {serie.nota}")
-            
+                elif avaliacao == "dislike":
+                    serie.dislike()
+                    print(f"Você deu dislike em {serie.nome}! Nova nota: {serie.nota}")
+                
             print("Obrigada pela sua avaliação!")
             print()
 
@@ -95,6 +96,5 @@ while(True):
         case "0":
             print("Fim do programa")
             break
-
         case _:
             print("Valor inválido")
