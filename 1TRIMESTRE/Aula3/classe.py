@@ -7,14 +7,14 @@ class Serie:
         self.episodios = episodios
         self.nota = nota
 
-        def like(self):
-            self.nota += 0.2
-            if self.nota > 5:
-                self.nota = 5
-        def dislike(self):
-            self.nota -= 0.2
-            if self.nota < 0:
-                self.nota = 0
+    def like(self):
+        self.nota += 0.2
+        if self.nota > 5:
+            self.nota = 5
+    def dislike(self):
+        self.nota -= 0.2
+        if self.nota < 0:
+            self.nota = 0
 
 catalogo = [ ]
 catalogo.append(Serie("The Last of Us", "terror", 16, 4.2))
@@ -22,7 +22,6 @@ catalogo.append(Serie("Game of  Throne", "fantasia", 74, 4.6))
 catalogo.append(Serie("Breaking Bad", "drama", 62, 4.2))
 catalogo.append(Serie("Stranger Things", "terror", 42, 3.9))
 catalogo.append(Serie("Uma Mente Excepcional", "fantasia", 37, 3.8))
-
 
 while(True):
     comando = input("""Digite a função:
@@ -60,15 +59,16 @@ while(True):
             print()
             indice = int(input("Qual série você gostaria de avaliar? Digite o índice: "))
             avaliacao = str(input("like ou dislike? "))
-                
-            for serie in catalogo:
-                if avaliacao == "like":
-                    serie.like()
-                    print(f"Você deu like em {serie.nome}! Nova nota: {serie.nota}")
 
-                elif avaliacao == "dislike":
-                    serie.dislike()
-                    print(f"Você deu dislike em {serie.nome}! Nova nota: {serie.nota}")
+            serie = catalogo[indice]
+                
+            if avaliacao == "like":
+                serie.like()
+                print(f"Você deu like em {serie.nome}! Nova nota: {serie.nota}")
+
+            elif avaliacao == "dislike":
+                serie.dislike()
+                print(f"Você deu dislike em {serie.nome}! Nova nota: {serie.nota}")
                 
             print("Obrigada pela sua avaliação!")
             print()
@@ -96,5 +96,6 @@ while(True):
         case "0":
             print("Fim do programa")
             break
+            
         case _:
             print("Valor inválido")
