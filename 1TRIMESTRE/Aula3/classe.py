@@ -73,8 +73,6 @@ while(True):
             print("Obrigada pela sua avaliação!")
             print()
 
-            
-
         case "5":
             novo_indice = len(catalogo)
             print()
