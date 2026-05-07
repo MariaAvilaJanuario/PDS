@@ -3,7 +3,12 @@ matriz = []
 qtdLinhas = int(input("Digite a quantidade de linhas: "))
 qtdColunas = int(input("Digite a quantidade de colunas: "))
 
-i = 0
-while (i < qtdLinhas):
-    a = input("Digite o termo: ")
-    matriz.append(a)
+for i in range(qtdLinhas):
+    linha = []
+    for j in range(qtdColunas):
+        x = input("Digite: ")
+        linha.append(x)
+    matriz.append(linha)
+
+for x in matriz:
+    print(x)
