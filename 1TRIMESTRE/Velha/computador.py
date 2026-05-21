@@ -19,10 +19,8 @@ while(True):
 
 
     while(True):
-        print()
         chuteL = int(input("Jogador X digite a linha ")) -1
         chuteC = int(input("Jogador X digite a coluna ")) -1
-        print()
 
         if(tabuleiro[chuteL][chuteC] == " "):
             tabuleiro[chuteL][chuteC] = "X"
@@ -31,23 +29,15 @@ while(True):
 
         elif (tabuleiro[chuteL][chuteC] == "X"):
             print("Já está preenchido")
-            print()
 
         else:
             print("Posição inválida")
-            print()
 
-    if (jogadas==9):
-        print("Velha! Empate")
-        mostraTabuleiro()
-        break
 
     while(True):
         mostraTabuleiro()
-        print()
         chuteL2 = int(input("Jogador O digite a linha ")) -1
         chuteC2 = int(input("Jogador O digite a linha ")) -1
-        print()
 
         if(tabuleiro[chuteL2][chuteC2] == " "):
             tabuleiro[chuteL2][chuteC2] = "O"
@@ -57,8 +47,13 @@ while(True):
 
         elif(tabuleiro[chuteL2][chuteC2] == "X"):
             print("Já está preenchido")
-            print()
+
 
         else:
             print("Posição inválida")
-            print()
+
+    
+    if (jogadas==9):
+        break
+
+    
