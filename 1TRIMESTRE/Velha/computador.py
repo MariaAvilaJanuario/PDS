@@ -31,29 +31,31 @@ while(True):
             print("Já está preenchido")
 
         else:
+            mostraTabuleiro()
             print("Posição inválida")
+
+    if (jogadas==9):
+        print("Velha! Empate")
+        mostraTabuleiro()
+        break
 
 
     while(True):
         mostraTabuleiro()
-        chuteL2 = int(input("Jogador O digite a linha ")) -1
-        chuteC2 = int(input("Jogador O digite a linha ")) -1
+        print()
+        chuteL2 = random.randrange(3)
+        chuteC2 = random.randrange(3)
+        print()
 
         if(tabuleiro[chuteL2][chuteC2] == " "):
             tabuleiro[chuteL2][chuteC2] = "O"
             jogadas += 1
-            
             break
 
-        elif(tabuleiro[chuteL2][chuteC2] == "X"):
+        elif (tabuleiro[chuteL][chuteC] == "X"):
             print("Já está preenchido")
-
+            print()
 
         else:
             print("Posição inválida")
-
-    
-    if (jogadas==9):
-        break
-
-    
+            print()
