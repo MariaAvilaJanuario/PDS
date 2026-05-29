@@ -18,12 +18,12 @@ def mostraTabuleiro():
 def fazJogada(jogador):
     while(True):
         chuteL = int(input("Digite a Linha:"))-1
-        chuteC = int(input("Digite a Linha:"))-1
+        chuteC = int(input("Digite a Coluna:"))-1
 
         if (tabuleiro[chuteL][chuteC] == " "):
              tabuleiro[chuteL][chuteC] = jogador
              
-             return verificaVitoria(chuteL, chuteC,jogador)
+             return verificaVitoria(chuteL, chuteC, jogador)
         
         print("Jogada Inválida")
 
@@ -35,28 +35,49 @@ def computadorJoga():
 
         if (tabuleiro[chuteL][chuteC] == " "):
             tabuleiro[chuteL][chuteC] = "O"
-            return verificaVitoria(chuteL, chuteC)
+
+            return verificaVitoria(chuteL, chuteC,"O")
         
 def verificaVitoria(chuteL, chuteC,jogador):
         cont=0
+
+        #Verifica as Colunas
         for i in range(3):
             if (tabuleiro[chuteL][i] == jogador):
                 cont +=1
-        
         if(cont == 3):
-            print("Vitória!" + jogador)
+            print("Vitória de " + jogador)
             return True
         else:
             cont=0
 
-
+        #Verifica as Linhas
         for i in range(3):
             if (tabuleiro[i][chuteC] == jogador):
                 cont +=1
-
         if(cont == 3):
-            print("Vitória!")
-            return
+            print("Vitória de " + jogador)
+            return True
+        else:
+            cont=0
+
+        #Verifica Diagonal \
+        for i in range(3):
+            if(tabuleiro[i][i] == jogador):
+                cont +=1
+        if(cont == 3):
+            print("Vitória de " + jogador)
+            return True
+        else:
+            cont=0
+
+        #Verifica Diagonal /
+        for i in range(3):
+            if(tabuleiro[i][2-i] == jogador):
+                cont +=1
+        if(cont == 3):
+            print("Vitória de " + jogador)
+            return True
         else:
             cont=0
 
