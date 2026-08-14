@@ -16,13 +16,41 @@ def clica():
     if selecionado == 2:
         lista2.delete(0,"end")
         lista2.insert(0, "Litro ==> Galão")
-        lista2.insert(1, "Milimetro ==> Onça")
+        lista2.insert(1, "Mililitro ==> Onça")
 
 def calcular():
     escolhido = lista2.curselection()[0]
     aaa=lista2.get(escolhido)
-    print(aaa)
+    valorCampo = float(campo.get())
     
+    if aaa == "Metro ==> Pés":
+        resultado.delete(0, "end")
+        resultado.insert(0, valorCampo * 3.281)
+    
+    if aaa == "Centímetro ==> Polegada":
+        resultado.delete(0, "end")
+        resultado.insert(0, valorCampo / 2.54)
+
+    if aaa == "Kilometro ==> Milha":
+        resultado.delete(0, "end")
+        resultado.insert(0, valorCampo / 1.609)
+
+    if aaa == "Kilograma ==> Libras":
+        resultado.delete(0, "end")
+        resultado.insert(0, valorCampo * 2.205)
+
+    if aaa == "Grama ==> Onça":
+        resultado.delete(0, "end")
+        resultado.insert(0, valorCampo / 28.35)
+
+    if aaa == "Litro ==> Galão":
+        resultado.delete(0, "end")
+        resultado.insert(0, valorCampo / 3.785)
+
+    if aaa == "Mililitro ==> Onça":
+        resultado.delete(0, "end")
+        resultado.insert(0, valorCampo / 29.574)
+
 
 janela = tk.Tk()
 janela.title("Conversor de Medidas")
@@ -44,7 +72,6 @@ lista2.grid(row=1, column=0)
 quadro = tk.Frame(janela)
 quadro.grid(row=1, column=2)
 
-valorCampo = tk.IntVar()
 campo = tk.Entry(quadro)
 campo.grid()
 
